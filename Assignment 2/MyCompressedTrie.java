@@ -2,12 +2,6 @@
 /*** 
  * This is class implements a compressed trie that holds a set of strings.
  * MyCompressedTrie stores nodes using class TreeNodeWithData
- * 
- * Name:   
- * Student Number: 
- * Uottawa Email: 
- * 
- *
  */
 public class MyCompressedTrie {
 	
@@ -20,16 +14,11 @@ public class MyCompressedTrie {
 		numNodes=1;
 	}
 	
-	// to be implemented by you see handout Part 2A
 	// Constructor that receives a regular trie and creates this
 	// instance that is a compressed trie
-	// 
 	public MyCompressedTrie(MyTrie trie) { 
 		this(); // call to the simple constructor above (empty trie consisting of root only)
-		// **** a lot of code to be implemented here, with possible ***
-		// calls to private auxiliary methods that you may want create.
-		// now we just have a dummy method that prints a message.
-		//System.out.println("MyCompressedTrie(MyTrie) not implemented!");
+		
 		addNode(trie.root().getLeftChild(),"0",root);
 		addNode(trie.root().getRightChild(),"1",root);
 	}
@@ -74,12 +63,11 @@ public class MyCompressedTrie {
 		}
 	}
 	
+	// the following method that calls its recursive counterpart
+	// prints the tree and its data values at nodes in 
+	// LexicoGrphical traversal order
 
-	// Method to be implemented by you. See handout part 2A	
 	public void printStringsInLexicoOrder() {
-		// ***** method code to be added in this class *****
-		// now we just have a dummy method that prints a message.
-		//System.out.println("printStringsInLexicoOrder() not implemented!");
 		printStringsInLexicoOrder(root, "");
 	}
 	
@@ -102,11 +90,11 @@ public class MyCompressedTrie {
 	// prints the tree and its data values at nodes in 
 	// in-order traversal order
 	
-	public void printInOrder() { // not to be changed
+	public void printInOrder() { 
 		printInOrder(root);
 	}
 	
-	private void printInOrder(TreeNode N) { // not to be changed
+	private void printInOrder(TreeNode N) { 
 		System.out.print("(");
 		if (N!=null) {
 			printInOrder(N.getLeftChild());
